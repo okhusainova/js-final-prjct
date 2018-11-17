@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+<button id="button1">1</button>
+<button id="button2">2</button>
+<button id="button3">3</button>
+<button id="button4">4</button>
+
+<script>
+  init();
+
+  async function init () {
+    let promise1 = new Promise((resolve, reject) => {
+      button1.onclick = () => {
+        resolve();
+      };
+    });
+
+    let promise2 = new Promise((resolve, reject) => {
+      button2.onclick = () => {
+        resolve();
+      };
+    });
+
+    let promise3 = new Promise((resolve, reject) => {
+      button3.onclick = () => {
+        resolve();
+      };
+    });
+
+    let promise4 = new Promise((resolve, reject) => {
+      button4.onclick = () => {
+        resolve();
+      };
+    });
+
+
+    await Promise.all([promise1, promise2, promise3, promise4]);
+
+    console.log(123);
+
+    init();
+  }
+
+</script>
+
+</body>
+
+</html>
